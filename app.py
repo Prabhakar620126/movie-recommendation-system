@@ -2,6 +2,7 @@ import streamlit as st
 import pickle
 import pandas as pd
 import requests
+import os 
 
 from scipy.sparse import load_npz
 from sklearn.metrics.pairwise import cosine_similarity
@@ -20,7 +21,7 @@ st.set_page_config(
 # OMDb API KEY
 # ============================
 
-API_KEY = "bb9124a7"
+API_KEY = os.getenv("OMDB_API_KEY", "bb9124a7")
 
 # ============================
 # LOAD DATA
